@@ -1,0 +1,12 @@
+C4w E4w G4w
+C4w G4w E5w
+E4w G4w C5w
+E4w C5w G5w
+G4w C5w E5w
+G4w E5w C6w
+C4w Eb4w G4w
+C4w G4w Eb5w
+Eb4w G4w C5w
+Eb4w C5w G5w
+G4w C5w Eb5w
+G4w Eb5w C6w
