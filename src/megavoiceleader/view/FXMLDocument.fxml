@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="megavoiceleader.view.FXMLDocumentController">
+  <children>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <TitledPane animated="false" layoutX="0.0" layoutY="-6.0" prefWidth="320.0" text="Mega Voice-Leader">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <children>
+            <Button id="button" fx:id="fileChooserButton" layoutX="14.0" layoutY="14.0" onAction="#handleFileChooserButton" text="Choose a Chord Dictionary" />
+            <TextField fx:id="lengthField" layoutX="14.0" layoutY="52.0" prefWidth="96.0" promptText="" />
+            <Label layoutX="130.0" layoutY="55.0" text="Piece Length (# of chords)" />
+            <TextField fx:id="loopField" layoutX="14.0" layoutY="79.0" prefWidth="96.0" />
+            <Label layoutX="130.0" layoutY="82.0" text="Loop Tolerance" />
+            <TextField fx:id="tempoField" layoutX="14.0" layoutY="107.0" prefWidth="96.0" />
+            <Label layoutX="130.0" layoutY="107.0" text="Tempo in bpm" />
+            <Button id="button" fx:id="runButton" layoutX="244.0" layoutY="14.0" onAction="#handlerunButton" text="Run" />
+            <CheckBox fx:id="midi_out_chk" layoutX="136.0" layoutY="142.0" mnemonicParsing="false" text="Midi Out" />
+            <CheckBox fx:id="q_mode_chk" layoutX="214.0" layoutY="142.0" mnemonicParsing="false" text="Queue Mode" />
+            <CheckBox fx:id="broken_chords" layoutX="24.0" layoutY="142.0" mnemonicParsing="false" text="Broken Chords" />
+          </children>
+        </AnchorPane>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>
