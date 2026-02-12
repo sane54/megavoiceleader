@@ -88,16 +88,11 @@ public class PlayerBox {
 //            
 //        }
         pps_player = new Player();
-            
+        
         LauncherThread starter_thread = new LauncherThread();
         Thread PlayerStarterThread = new Thread((Runnable) starter_thread.worker);
         PlayerStarterThread.start();
-        
-
-        
-        
-       
-        
+    
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle(title);
         stage.setMinWidth(450);
@@ -108,12 +103,9 @@ public class PlayerBox {
                 }
             }
         });  
-        
-        
-        
+ 
         Label lbl = new Label();
         lbl.setText(message);
-        
         Button btnPause = new Button();
         btnPause.setText("Pause");
         btnPause.setOnAction(new EventHandler<ActionEvent>() {
@@ -130,7 +122,6 @@ public class PlayerBox {
                     Thread PlayerResumeThread = new Thread((Runnable) resume_thread.worker);
                     PlayerResumeThread.start();   
                 }
-
             }
         });
         
@@ -169,6 +160,7 @@ public class PlayerBox {
             usedefault = true;
         }
     }
+    
     /**
      * The launcher for the player thread. 
      */
@@ -176,8 +168,10 @@ public class PlayerBox {
         public Worker worker;
         boolean resume = false;
         String playerstate;
+
         public  LauncherThread() {
             worker = new Task<String>() {
+
                 @Override
                 protected String call() throws Exception {
                     if (pps_player.isPaused()) {
@@ -185,14 +179,13 @@ public class PlayerBox {
                     }
                     else {
                         if (!megavoiceleader.InputParameters.get_q_mode()){
-
                             if (megavoiceleader.InputParameters.get_out_to_midi_yoke()){
                                 System.out.println("still out to midiyoke");
                                 midiInitialize();
-//                                if(pps_player.isFinished()) System.out.println("Player is Finished");
-//                                if(pps_player.isPaused()) System.out.println("Player is paused");
-//                                if(pps_player.isPlaying()) System.out.println("Player is still playing");
-//                                if(pps_player.isStarted()) System.out.println("Player is started");
+        //                                if(pps_player.isFinished()) System.out.println("Player is Finished");
+        //                                if(pps_player.isPaused()) System.out.println("Player is paused");
+        //                                if(pps_player.isPlaying()) System.out.println("Player is still playing");
+        //                                if(pps_player.isStarted()) System.out.println("Player is started");
                             }
                             else usedefault = true;
                             System.out.println("usedefault = " + usedefault);
@@ -208,20 +201,17 @@ public class PlayerBox {
                                 pps_player.play(megavoiceleader.PatternQueueStorerSaver.get_queue_pattern(queue_index));
                                 queue_index++;
                             }
-
                         }
                     }
-
                     while (true) {
-                        if (!pps_player.isPlaying()) {
-                            break;
-                        }
+                        if (!pps_player.isPlaying()) break;
                     }
                     return "done";
                 }
             };
         }
     }
+    
     /**
      * Solely used to connect the Java Midi sequencer to a port rather than a 
      * synthesizer. 
@@ -234,6 +224,6 @@ public class PlayerBox {
             return sequencer;
         }
     }
-        
+}      
     
-}
+

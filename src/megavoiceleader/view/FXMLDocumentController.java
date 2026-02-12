@@ -92,7 +92,7 @@ public class FXMLDocumentController implements Initializable {
         fileChooserButton.setDisable(true);
         
         //Starting the counterpoint
-        megavoiceleader.VoiceLeader2 model = new megavoiceleader.VoiceLeader2();
+        megavoiceleader.VoiceLeader2_refactor model = new megavoiceleader.VoiceLeader2_refactor();
         Thread generatorThread = new Thread((Runnable) model.worker);
         generatorThread.start();
         

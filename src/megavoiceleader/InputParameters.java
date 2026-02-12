@@ -33,7 +33,7 @@ static File filePath = null;
 static File queueDir = null;
 static File fileDir = null;
 static String queue_directory = null;
-static File chordDict = null;
+static File chordDict = new File("C:\\Users\\witzg\\Chord_Dictionary\\nice_3_note_chords.txt");
 
 public static Boolean get_out_to_midi_yoke () {
     return out_to_midi_yoke;

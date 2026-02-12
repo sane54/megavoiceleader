@@ -46,10 +46,8 @@ public class CancelBox {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle(title);
         stage.setMinWidth(450);
-        
         Label lbl = new Label();
         lbl.setText(message);
-        
         Button btnOK = new Button();
         btnOK.setText("OK");
         btnOK.setOnAction(new EventHandler<ActionEvent>() {
@@ -57,7 +55,6 @@ public class CancelBox {
                 stage.close();
             }
         });
-        
         Button btnCancel = new Button("Cancel");
         btnCancel.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -65,12 +62,10 @@ public class CancelBox {
                 stage.close();
             }
         });
-        
         VBox pane = new VBox(30);
         pane.getChildren().addAll(lbl, btnOK, btnCancel);
         pane.setAlignment(Pos.CENTER);
         pane.setStyle("-fx-font: 11px \"Lucida Sans Unicode\"; -fx-padding: 10; -fx-background-color: beige;");
-        
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.showAndWait();
